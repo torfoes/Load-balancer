@@ -1,17 +1,19 @@
-#ifndef REQUESTQUEUE_H
-#define REQUESTQUEUE_H
+#include "RequestQueue.h"
 
-#include "Request.h"
-#include <queue>
+void RequestQueue::addRequest(const Request& request) {
+    queue.push(request);
+}
 
-class RequestQueue {
-public:
-    void addRequest(const Request& request);
-    Request getNextRequest();
-    bool isEmpty() const;
+Request RequestQueue::getNextRequest() {
+    Request request = queue.front();
+    queue.pop();
+    return request;
+}
 
-private:
-    std::queue<Request> queue;
-};
+bool RequestQueue::isEmpty() const {
+    return queue.empty();
+}
 
-#endif
+int RequestQueue::size() const {
+    return queue.size();
+}

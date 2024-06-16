@@ -9,10 +9,15 @@
 class LoadBalancer {
 public:
     LoadBalancer(std::vector<WebServer>& servers);
-    void balanceLoad(Request& request);
+    void addRequest(const Request& request);
+    void balanceLoad();
+    void addServer(const WebServer& server);
+    int getRequestQueueSize() const;
+
 
 private:
     std::vector<WebServer>& servers;
+    RequestQueue requestQueue;
 };
 
 #endif

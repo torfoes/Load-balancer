@@ -5,11 +5,15 @@
 
 class Request {
 public:
-    Request(const std::string& content);
-    std::string getContent() const;
+    Request(const std::string& ipIn, const std::string& ipOut, int time);
+    std::string getIpIn() const;
+    std::string getIpOut() const;
+    int getTime() const;
 
 private:
-    std::string content;
+    std::string ipIn;
+    std::string ipOut;
+    int time;
 };
 
 #endif
