@@ -8,6 +8,7 @@
 #include "LoadBalancer.h"
 #include "Request.h"
 #include "WebServer.h"
+#include <fstream> 
 
 std::string generateRandomIP() {
     return std::to_string(rand() % 256) + "." +
@@ -179,7 +180,23 @@ int main() {
     // average cycle time
     double averageCycleTime = std::accumulate(cycleTimes.begin(), cycleTimes.end(), 0.0) / cycleTimes.size();
 
+    std::ofstream logFile("server_log.txt", std::ios::app);
+    if (logFile.is_open()) {
+        logFile << "Simulation completed." << std::endl;
+        logFile << "Final number of servers: " << servers.size() << std::endl;
+        logFile << "Remaining requests in the queue: " << loadBalancer.getRequestQueueSize() << std::endl;
+        logFile << "Average cycle time: " << averageCycleTime << " milliseconds" << std::endl;
+        logFile << "Initial number of requests: " << numServers * 100 << std::endl;
+        logFile << "Additional requests rate: " << newRequestsPerSecond << " per second" << std::endl;
+        logFile.close();
+    } else {
+        std::cerr << "Unable to open log file." << std::endl;
+    }
+
     std::cout << "Simulation completed." << std::endl;
+    std::cout << "Initial number of requests: " << numServers * 100 << std::endl;
+    std::cout << "Additional requests rate: " << newRequestsPerSecond << " per second" << std::endl;
+
     std::cout << "Final number of servers: " << servers.size() << std::endl;
     std::cout << "Remaining requests in the queue: " << loadBalancer.getRequestQueueSize() << std::endl;
     std::cout << "Average cycle time: " << averageCycleTime << " milliseconds" << std::endl;
