@@ -52,7 +52,7 @@ int main() {
     std::cout << "Enter number of new requests per second: ";
     std::cin >> newRequestsPerSecond;
 
-    // Create the specified number of web servers with unique IDs
+    // Create the specified number of web servers with IDs
     std::vector<WebServer> servers;
     for (int i = 0; i < numServers; ++i) {
         servers.push_back(WebServer(i));
@@ -61,7 +61,6 @@ int main() {
     // Create a LoadBalancer with the servers
     LoadBalancer loadBalancer(servers);
 
-    // Initialize random seed
     std::srand(std::time(0));
 
     // Create an initial full queue (servers * 100 requests)
@@ -70,7 +69,9 @@ int main() {
     }
 
     int previousQueueSize = loadBalancer.getRequestQueueSize();
-    const int balanceBuffer = 10; // Define a buffer for load balancing
+
+
+    const int balanceBuffer = 10;
 
     // Number of cycles to check the queue size will be used to allocate more servers if the queue size is increasing
     const int checkCycleThreshold = 100;
@@ -107,7 +108,7 @@ int main() {
 
             // Adjust servers
             if (cycleCount >= checkCycleThreshold) {
-                cycleCount = 0; // Reset the cycle count
+                cycleCount = 0; 
 
                 int currentQueueSize = loadBalancer.getRequestQueueSize();
 
@@ -156,7 +157,6 @@ int main() {
                     std::cout << "Added a new server. Total servers: " << servers.size() << std::endl;
                 }
 
-                // Remove a server if the queue size is decreasing and we have more servers than initially allocated
                 else if (currentQueueSize < previousQueueSize - balanceBuffer && servers.size() > 1) {
                     loadBalancer.removeServer();
                     std::cout << "Removed a server. Total servers: " << servers.size() << std::endl;
