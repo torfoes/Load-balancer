@@ -77,6 +77,8 @@ int main() {
     const int checkCycleThreshold = 100;
 
     int cycleCount = 0;
+    int iterationCount = 0;
+
     std::vector<double> cycleTimes;
     auto requestInterval = std::chrono::milliseconds(1000 / newRequestsPerSecond);
     auto lastRequestTime = std::chrono::steady_clock::now();
@@ -146,9 +148,11 @@ int main() {
 
             // Increment cycle count
             cycleCount++;
+            iterationCount++;
 
-            if (cycleCount >= checkCycleThreshold) {
-                cycleCount = 0;
+
+            if (iterationCount >= checkCycleThreshold) {
+                iterationCount = 0;
 
                 int currentQueueSize = loadBalancer.getRequestQueueSize();
                 if (currentQueueSize > previousQueueSize + balanceBuffer) {
@@ -163,6 +167,8 @@ int main() {
                 }
                 previousQueueSize = currentQueueSize;
             }
+            // let some processing be done -- too fast without it.
+            std::this_thread::sleep_for(std::chrono::milliseconds(1));
 
             auto cycleEndTime = std::chrono::steady_clock::now();
             auto cycleTime = std::chrono::duration_cast<std::chrono::milliseconds>(cycleEndTime - cycleStartTime).count();
