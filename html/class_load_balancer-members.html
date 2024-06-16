@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.11.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Webserver Load Balancer: Member List</title>
+<title>Load Balancer Demonstration: Member List</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,8 +25,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Webserver Load Balancer
+   <div id="projectname">Load Balancer Demonstration
    </div>
+   <div id="projectbrief">A simulated load balancer that scales up and down depending on the usage.</div>
   </td>
  </tr>
  </tbody>
@@ -90,8 +91,12 @@ $(function(){ initResizable(false); });
 
 <p>This is the complete list of members for <a class="el" href="class_load_balancer.html">LoadBalancer</a>, including all inherited members.</p>
 <table class="directory">
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>balanceLoad</b>(Request &amp;request) (defined in <a class="el" href="class_load_balancer.html">LoadBalancer</a>)</td><td class="entry"><a class="el" href="class_load_balancer.html">LoadBalancer</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>LoadBalancer</b>(std::vector&lt; WebServer &gt; &amp;servers) (defined in <a class="el" href="class_load_balancer.html">LoadBalancer</a>)</td><td class="entry"><a class="el" href="class_load_balancer.html">LoadBalancer</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_load_balancer.html#abba1a1fcaa67e79e9aee94e903e1458c">addRequest</a>(const Request &amp;request)</td><td class="entry"><a class="el" href="class_load_balancer.html">LoadBalancer</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_load_balancer.html#ae60e5300263487e42b91d923c4134cfe">addServer</a>(const WebServer &amp;server)</td><td class="entry"><a class="el" href="class_load_balancer.html">LoadBalancer</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_load_balancer.html#a7b83bc6336a6491a7cb011d92643828d">balanceLoad</a>()</td><td class="entry"><a class="el" href="class_load_balancer.html">LoadBalancer</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_load_balancer.html#a62df7b94c22e8e16b22d2cd758b7824e">getRequestQueueSize</a>() const</td><td class="entry"><a class="el" href="class_load_balancer.html">LoadBalancer</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_load_balancer.html#a9910ebf665d14ec76a561c5ab8e51bae">LoadBalancer</a>(std::vector&lt; WebServer &gt; &amp;servers)</td><td class="entry"><a class="el" href="class_load_balancer.html">LoadBalancer</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_load_balancer.html#a2f77281d168914e6bbe1857a0cd84d25">removeServer</a>()</td><td class="entry"><a class="el" href="class_load_balancer.html">LoadBalancer</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

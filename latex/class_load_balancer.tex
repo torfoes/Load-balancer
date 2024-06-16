@@ -1,14 +1,98 @@
 \doxysection{Load\+Balancer Class Reference}
 \hypertarget{class_load_balancer}{}\label{class_load_balancer}\index{LoadBalancer@{LoadBalancer}}
+
+
+A class to manage the distribution of network requests across multiple web servers.  
+
+
+
+
+{\ttfamily \#include $<$Load\+Balancer.\+h$>$}
+
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_load_balancer_a9910ebf665d14ec76a561c5ab8e51bae}\label{class_load_balancer_a9910ebf665d14ec76a561c5ab8e51bae} 
-{\bfseries Load\+Balancer} (std\+::vector$<$ \mbox{\hyperlink{class_web_server}{Web\+Server}} $>$ \&servers)
-\item 
-\Hypertarget{class_load_balancer_a29d8f4060053068e7a0be40c367f3a27}\label{class_load_balancer_a29d8f4060053068e7a0be40c367f3a27} 
-void {\bfseries balance\+Load} (\mbox{\hyperlink{class_request}{Request}} \&request)
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_load_balancer_a9910ebf665d14ec76a561c5ab8e51bae}{Load\+Balancer}} (std\+::vector$<$ \mbox{\hyperlink{class_web_server}{Web\+Server}} $>$ \&servers)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_load_balancer}{Load\+Balancer} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_load_balancer_abba1a1fcaa67e79e9aee94e903e1458c}{add\+Request}} (const \mbox{\hyperlink{class_request}{Request}} \&request)
+\begin{DoxyCompactList}\small\item\em Adds a request to the load balancer\textquotesingle{}s queue. \end{DoxyCompactList}\item 
+\Hypertarget{class_load_balancer_a7b83bc6336a6491a7cb011d92643828d}\label{class_load_balancer_a7b83bc6336a6491a7cb011d92643828d} 
+void {\bfseries balance\+Load} ()
+\begin{DoxyCompactList}\small\item\em Distributes the requests in the queue to the available servers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_load_balancer_ae60e5300263487e42b91d923c4134cfe}{add\+Server}} (const \mbox{\hyperlink{class_web_server}{Web\+Server}} \&server)
+\begin{DoxyCompactList}\small\item\em Adds a server to the load balancer. \end{DoxyCompactList}\item 
+\Hypertarget{class_load_balancer_a2f77281d168914e6bbe1857a0cd84d25}\label{class_load_balancer_a2f77281d168914e6bbe1857a0cd84d25} 
+void {\bfseries remove\+Server} ()
+\begin{DoxyCompactList}\small\item\em Removes the last server from the load balancer. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_load_balancer_a62df7b94c22e8e16b22d2cd758b7824e}{get\+Request\+Queue\+Size}} () const
+\begin{DoxyCompactList}\small\item\em Gets the number of requests in the queue. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class to manage the distribution of network requests across multiple web servers. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_load_balancer_a9910ebf665d14ec76a561c5ab8e51bae}\index{LoadBalancer@{LoadBalancer}!LoadBalancer@{LoadBalancer}}
+\index{LoadBalancer@{LoadBalancer}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{LoadBalancer()}{LoadBalancer()}}
+{\footnotesize\ttfamily \label{class_load_balancer_a9910ebf665d14ec76a561c5ab8e51bae} 
+Load\+Balancer\+::\+Load\+Balancer (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_web_server}{Web\+Server}} $>$ \&}]{servers}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{class_load_balancer}{Load\+Balancer} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em servers} & A reference to a vector of \doxylink{class_web_server}{Web\+Server} objects. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_load_balancer_abba1a1fcaa67e79e9aee94e903e1458c}\index{LoadBalancer@{LoadBalancer}!addRequest@{addRequest}}
+\index{addRequest@{addRequest}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{addRequest()}{addRequest()}}
+{\footnotesize\ttfamily \label{class_load_balancer_abba1a1fcaa67e79e9aee94e903e1458c} 
+void Load\+Balancer\+::add\+Request (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_request}{Request}} \&}]{request}{}\end{DoxyParamCaption})}
+
+
+
+Adds a request to the load balancer\textquotesingle{}s queue. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & The request to be added. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_load_balancer_ae60e5300263487e42b91d923c4134cfe}\index{LoadBalancer@{LoadBalancer}!addServer@{addServer}}
+\index{addServer@{addServer}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{addServer()}{addServer()}}
+{\footnotesize\ttfamily \label{class_load_balancer_ae60e5300263487e42b91d923c4134cfe} 
+void Load\+Balancer\+::add\+Server (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_web_server}{Web\+Server}} \&}]{server}{}\end{DoxyParamCaption})}
+
+
+
+Adds a server to the load balancer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em server} & The \doxylink{class_web_server}{Web\+Server} object to be added. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_load_balancer_a62df7b94c22e8e16b22d2cd758b7824e}\index{LoadBalancer@{LoadBalancer}!getRequestQueueSize@{getRequestQueueSize}}
+\index{getRequestQueueSize@{getRequestQueueSize}!LoadBalancer@{LoadBalancer}}
+\doxysubsubsection{\texorpdfstring{getRequestQueueSize()}{getRequestQueueSize()}}
+{\footnotesize\ttfamily \label{class_load_balancer_a62df7b94c22e8e16b22d2cd758b7824e} 
+int Load\+Balancer\+::get\+Request\+Queue\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the number of requests in the queue. 
+
+\begin{DoxyReturn}{Returns}
+The number of requests in the queue. 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.11.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Webserver Load Balancer: WebServer.h Source File</title>
+<title>Load Balancer Demonstration: WebServer.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,8 +25,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Webserver Load Balancer
+   <div id="projectname">Load Balancer Demonstration
    </div>
+   <div id="projectbrief">A simulated load balancer that scales up and down depending on the usage.</div>
   </td>
  </tr>
  </tbody>
@@ -91,17 +92,36 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define WEBSERVER_H</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;Request.h&quot;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="foldopen" id="foldopen00010" data-start="{" data-end="};">
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="class_web_server.html">   10</a></span><span class="keyword">class </span><a class="code hl_class" href="class_web_server.html">WebServer</a> {</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keywordtype">void</span> handleRequest(<span class="keyword">const</span> <a class="code hl_class" href="class_request.html">Request</a>&amp; request);</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>};</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;chrono&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="foldopen" id="foldopen00011" data-start="{" data-end="};">
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="class_web_server.html">   11</a></span><span class="keyword">class </span><a class="code hl_class" href="class_web_server.html">WebServer</a> {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <a class="code hl_function" href="class_web_server.html#a5044757cd8574d3f62a7eec5d51fb00f">WebServer</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_web_server.html#a8e68c7565f219c5a8f0380d58492b972">handleRequest</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_request.html">Request</a>&amp; request);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_web_server.html#a6facc54cbb034d850b16ef48ccaef27c">isAvailable</a>();</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_web_server.html#a411c2251f15e22b2b5724a6fc26e5c57">update</a>();</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_web_server.html#aeb7683db74eccb456592ff2f1dc211d8">getId</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordtype">int</span> id;  </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordtype">bool</span> available;  </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    std::chrono::steady_clock::time_point finishTime;  </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>};</div>
 </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclass_request_html"><div class="ttname"><a href="class_request.html">Request</a></div><div class="ttdef"><b>Definition</b> Request.h:6</div></div>
-<div class="ttc" id="aclass_web_server_html"><div class="ttname"><a href="class_web_server.html">WebServer</a></div><div class="ttdoc">Simulates a web server.</div><div class="ttdef"><b>Definition</b> WebServer.h:10</div></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclass_request_html"><div class="ttname"><a href="class_request.html">Request</a></div><div class="ttdoc">A class to represent a network request with input and output IP addresses and a timestamp.</div><div class="ttdef"><b>Definition</b> Request.h:10</div></div>
+<div class="ttc" id="aclass_web_server_html"><div class="ttname"><a href="class_web_server.html">WebServer</a></div><div class="ttdoc">A class to represent a web server that handles network requests.</div><div class="ttdef"><b>Definition</b> WebServer.h:11</div></div>
+<div class="ttc" id="aclass_web_server_html_a411c2251f15e22b2b5724a6fc26e5c57"><div class="ttname"><a href="class_web_server.html#a411c2251f15e22b2b5724a6fc26e5c57">WebServer::update</a></div><div class="ttdeci">void update()</div><div class="ttdoc">Updates the server's status based on the current time.</div><div class="ttdef"><b>Definition</b> WebServer.cpp:32</div></div>
+<div class="ttc" id="aclass_web_server_html_a5044757cd8574d3f62a7eec5d51fb00f"><div class="ttname"><a href="class_web_server.html#a5044757cd8574d3f62a7eec5d51fb00f">WebServer::WebServer</a></div><div class="ttdeci">WebServer(int id)</div><div class="ttdoc">Constructs a WebServer object.</div><div class="ttdef"><b>Definition</b> WebServer.cpp:5</div></div>
+<div class="ttc" id="aclass_web_server_html_a6facc54cbb034d850b16ef48ccaef27c"><div class="ttname"><a href="class_web_server.html#a6facc54cbb034d850b16ef48ccaef27c">WebServer::isAvailable</a></div><div class="ttdeci">bool isAvailable()</div><div class="ttdoc">Checks if the server is available to handle a request.</div><div class="ttdef"><b>Definition</b> WebServer.cpp:27</div></div>
+<div class="ttc" id="aclass_web_server_html_a8e68c7565f219c5a8f0380d58492b972"><div class="ttname"><a href="class_web_server.html#a8e68c7565f219c5a8f0380d58492b972">WebServer::handleRequest</a></div><div class="ttdeci">void handleRequest(const Request &amp;request)</div><div class="ttdoc">Handles a network request.</div><div class="ttdef"><b>Definition</b> WebServer.cpp:7</div></div>
+<div class="ttc" id="aclass_web_server_html_aeb7683db74eccb456592ff2f1dc211d8"><div class="ttname"><a href="class_web_server.html#aeb7683db74eccb456592ff2f1dc211d8">WebServer::getId</a></div><div class="ttdeci">int getId() const</div><div class="ttdoc">Gets the server's identifier.</div><div class="ttdef"><b>Definition</b> WebServer.cpp:38</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

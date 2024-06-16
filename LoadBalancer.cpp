@@ -7,18 +7,16 @@ void LoadBalancer::addRequest(const Request& request) {
 }
 
 void LoadBalancer::balanceLoad() {
-    // update the status of all servers
+    // Update the status of all servers
     for (auto& server : servers) {
         server.update();
     }
-    
-    // assign requests to available servers
-    static size_t serverIndex = 0;
-    while (!requestQueue.isEmpty()) {
-        if (servers[serverIndex].isAvailable()) {
-            servers[serverIndex].handleRequest(requestQueue.getNextRequest());
+
+    // Assign requests to available servers
+    for (auto& server : servers) {
+        if (!requestQueue.isEmpty() && server.isAvailable()) {
+            server.handleRequest(requestQueue.getNextRequest());
         }
-        serverIndex = (serverIndex + 1) % servers.size();
     }
 }
 
@@ -28,4 +26,10 @@ void LoadBalancer::addServer(const WebServer& server) {
 
 int LoadBalancer::getRequestQueueSize() const {
     return requestQueue.size();
+}
+
+void LoadBalancer::removeServer() {
+    if (!servers.empty()) {
+        servers.pop_back();
+    }
 }

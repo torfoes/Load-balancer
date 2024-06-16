@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.11.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Webserver Load Balancer: WebServer Class Reference</title>
+<title>Load Balancer Demonstration: WebServer Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,8 +25,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Webserver Load Balancer
+   <div id="projectname">Load Balancer Demonstration
    </div>
+   <div id="projectbrief">A simulated load balancer that scales up and down depending on the usage.</div>
   </td>
  </tr>
  </tbody>
@@ -91,20 +92,125 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 
-<p>Simulates a web server.  
+<p>A class to represent a web server that handles network requests.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_web_server_8h_source.html">WebServer.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8e68c7565f219c5a8f0380d58492b972" id="r_a8e68c7565f219c5a8f0380d58492b972"><td class="memItemLeft" align="right" valign="top"><a id="a8e68c7565f219c5a8f0380d58492b972" name="a8e68c7565f219c5a8f0380d58492b972"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>handleRequest</b> (const <a class="el" href="class_request.html">Request</a> &amp;request)</td></tr>
+<tr class="memitem:a5044757cd8574d3f62a7eec5d51fb00f" id="r_a5044757cd8574d3f62a7eec5d51fb00f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5044757cd8574d3f62a7eec5d51fb00f">WebServer</a> (int id)</td></tr>
+<tr class="memdesc:a5044757cd8574d3f62a7eec5d51fb00f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="class_web_server.html" title="A class to represent a web server that handles network requests.">WebServer</a> object.  <br /></td></tr>
+<tr class="separator:a5044757cd8574d3f62a7eec5d51fb00f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e68c7565f219c5a8f0380d58492b972" id="r_a8e68c7565f219c5a8f0380d58492b972"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e68c7565f219c5a8f0380d58492b972">handleRequest</a> (const <a class="el" href="class_request.html">Request</a> &amp;request)</td></tr>
+<tr class="memdesc:a8e68c7565f219c5a8f0380d58492b972"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles a network request.  <br /></td></tr>
 <tr class="separator:a8e68c7565f219c5a8f0380d58492b972"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6facc54cbb034d850b16ef48ccaef27c" id="r_a6facc54cbb034d850b16ef48ccaef27c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6facc54cbb034d850b16ef48ccaef27c">isAvailable</a> ()</td></tr>
+<tr class="memdesc:a6facc54cbb034d850b16ef48ccaef27c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the server is available to handle a request.  <br /></td></tr>
+<tr class="separator:a6facc54cbb034d850b16ef48ccaef27c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a411c2251f15e22b2b5724a6fc26e5c57" id="r_a411c2251f15e22b2b5724a6fc26e5c57"><td class="memItemLeft" align="right" valign="top"><a id="a411c2251f15e22b2b5724a6fc26e5c57" name="a411c2251f15e22b2b5724a6fc26e5c57"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>update</b> ()</td></tr>
+<tr class="memdesc:a411c2251f15e22b2b5724a6fc26e5c57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the server's status based on the current time. <br /></td></tr>
+<tr class="separator:a411c2251f15e22b2b5724a6fc26e5c57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb7683db74eccb456592ff2f1dc211d8" id="r_aeb7683db74eccb456592ff2f1dc211d8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeb7683db74eccb456592ff2f1dc211d8">getId</a> () const</td></tr>
+<tr class="memdesc:aeb7683db74eccb456592ff2f1dc211d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the server's identifier.  <br /></td></tr>
+<tr class="separator:aeb7683db74eccb456592ff2f1dc211d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Simulates a web server. </p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+<div class="textblock"><p>A class to represent a web server that handles network requests. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a5044757cd8574d3f62a7eec5d51fb00f" name="a5044757cd8574d3f62a7eec5d51fb00f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5044757cd8574d3f62a7eec5d51fb00f">&#9670;&#160;</a></span>WebServer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">WebServer::WebServer </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>id</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs a <a class="el" href="class_web_server.html" title="A class to represent a web server that handles network requests.">WebServer</a> object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>The identifier for the server. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="aeb7683db74eccb456592ff2f1dc211d8" name="aeb7683db74eccb456592ff2f1dc211d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb7683db74eccb456592ff2f1dc211d8">&#9670;&#160;</a></span>getId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int WebServer::getId </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the server's identifier. </p>
+<dl class="section return"><dt>Returns</dt><dd>The server's identifier. </dd></dl>
+
+</div>
+</div>
+<a id="a8e68c7565f219c5a8f0380d58492b972" name="a8e68c7565f219c5a8f0380d58492b972"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e68c7565f219c5a8f0380d58492b972">&#9670;&#160;</a></span>handleRequest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WebServer::handleRequest </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_request.html">Request</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>request</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Handles a network request. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">request</td><td>The request to be handled. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6facc54cbb034d850b16ef48ccaef27c" name="a6facc54cbb034d850b16ef48ccaef27c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6facc54cbb034d850b16ef48ccaef27c">&#9670;&#160;</a></span>isAvailable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool WebServer::isAvailable </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks if the server is available to handle a request. </p>
+<dl class="section return"><dt>Returns</dt><dd>True if the server is available, false otherwise. </dd></dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_web_server_8h_source.html">WebServer.h</a></li>
 <li><b>WebServer.cpp</b></li>
 </ul>

@@ -2,7 +2,7 @@
 \hypertarget{class_web_server}{}\label{class_web_server}\index{WebServer@{WebServer}}
 
 
-Simulates a web server.  
+A class to represent a web server that handles network requests.  
 
 
 
@@ -12,13 +12,83 @@ Simulates a web server.
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_web_server_a8e68c7565f219c5a8f0380d58492b972}\label{class_web_server_a8e68c7565f219c5a8f0380d58492b972} 
-void {\bfseries handle\+Request} (const \mbox{\hyperlink{class_request}{Request}} \&request)
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_web_server_a5044757cd8574d3f62a7eec5d51fb00f}{Web\+Server}} (int id)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_web_server}{Web\+Server} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_web_server_a8e68c7565f219c5a8f0380d58492b972}{handle\+Request}} (const \mbox{\hyperlink{class_request}{Request}} \&request)
+\begin{DoxyCompactList}\small\item\em Handles a network request. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_web_server_a6facc54cbb034d850b16ef48ccaef27c}{is\+Available}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the server is available to handle a request. \end{DoxyCompactList}\item 
+\Hypertarget{class_web_server_a411c2251f15e22b2b5724a6fc26e5c57}\label{class_web_server_a411c2251f15e22b2b5724a6fc26e5c57} 
+void {\bfseries update} ()
+\begin{DoxyCompactList}\small\item\em Updates the server\textquotesingle{}s status based on the current time. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_web_server_aeb7683db74eccb456592ff2f1dc211d8}{get\+Id}} () const
+\begin{DoxyCompactList}\small\item\em Gets the server\textquotesingle{}s identifier. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Simulates a web server. 
+A class to represent a web server that handles network requests. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_web_server_a5044757cd8574d3f62a7eec5d51fb00f}\index{WebServer@{WebServer}!WebServer@{WebServer}}
+\index{WebServer@{WebServer}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{WebServer()}{WebServer()}}
+{\footnotesize\ttfamily \label{class_web_server_a5044757cd8574d3f62a7eec5d51fb00f} 
+Web\+Server\+::\+Web\+Server (\begin{DoxyParamCaption}\item[{int}]{id}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{class_web_server}{Web\+Server} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The identifier for the server. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_web_server_aeb7683db74eccb456592ff2f1dc211d8}\index{WebServer@{WebServer}!getId@{getId}}
+\index{getId@{getId}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily \label{class_web_server_aeb7683db74eccb456592ff2f1dc211d8} 
+int Web\+Server\+::get\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the server\textquotesingle{}s identifier. 
+
+\begin{DoxyReturn}{Returns}
+The server\textquotesingle{}s identifier. 
+\end{DoxyReturn}
+\Hypertarget{class_web_server_a8e68c7565f219c5a8f0380d58492b972}\index{WebServer@{WebServer}!handleRequest@{handleRequest}}
+\index{handleRequest@{handleRequest}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{handleRequest()}{handleRequest()}}
+{\footnotesize\ttfamily \label{class_web_server_a8e68c7565f219c5a8f0380d58492b972} 
+void Web\+Server\+::handle\+Request (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_request}{Request}} \&}]{request}{}\end{DoxyParamCaption})}
+
+
+
+Handles a network request. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & The request to be handled. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_web_server_a6facc54cbb034d850b16ef48ccaef27c}\index{WebServer@{WebServer}!isAvailable@{isAvailable}}
+\index{isAvailable@{isAvailable}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{isAvailable()}{isAvailable()}}
+{\footnotesize\ttfamily \label{class_web_server_a6facc54cbb034d850b16ef48ccaef27c} 
+bool Web\+Server\+::is\+Available (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Checks if the server is available to handle a request. 
+
+\begin{DoxyReturn}{Returns}
+True if the server is available, false otherwise. 
+\end{DoxyReturn}
+
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

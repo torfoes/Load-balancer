@@ -1,14 +1,92 @@
 \doxysection{Request Class Reference}
 \hypertarget{class_request}{}\label{class_request}\index{Request@{Request}}
+
+
+A class to represent a network request with input and output IP addresses and a timestamp.  
+
+
+
+
+{\ttfamily \#include $<$Request.\+h$>$}
+
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_request_a254a50836847cdd9c23454c760ddb0f3}\label{class_request_a254a50836847cdd9c23454c760ddb0f3} 
-{\bfseries Request} (const std\+::string \&content)
-\item 
-\Hypertarget{class_request_aac710171b2d1c8c04076b8912f6745d4}\label{class_request_aac710171b2d1c8c04076b8912f6745d4} 
-std\+::string {\bfseries get\+Content} () const
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_request_a495c4903382a7377285ac8b53ebf243d}{Request}} (const std\+::string \&ip\+In, const std\+::string \&ip\+Out, int time)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_request}{Request} object. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_request_a25705cdbdf85c7ffdfff0e41795bfbfc}{get\+Ip\+In}} () const
+\begin{DoxyCompactList}\small\item\em Gets the input IP address. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_request_aa55c898286b6895e7d7245c9de97b211}{get\+Ip\+Out}} () const
+\begin{DoxyCompactList}\small\item\em Gets the output IP address. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_request_ae2e2641e6eb49b4dd1b29726c098789d}{get\+Time}} () const
+\begin{DoxyCompactList}\small\item\em Gets the timestamp of the request. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class to represent a network request with input and output IP addresses and a timestamp. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_request_a495c4903382a7377285ac8b53ebf243d}\index{Request@{Request}!Request@{Request}}
+\index{Request@{Request}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{Request()}{Request()}}
+{\footnotesize\ttfamily \label{class_request_a495c4903382a7377285ac8b53ebf243d} 
+Request\+::\+Request (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ip\+In}{, }\item[{const std\+::string \&}]{ip\+Out}{, }\item[{int}]{time}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{class_request}{Request} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ip\+In} & The input IP address. \\
+\hline
+{\em ip\+Out} & The output IP address. \\
+\hline
+{\em time} & The timestamp of the request. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_request_a25705cdbdf85c7ffdfff0e41795bfbfc}\index{Request@{Request}!getIpIn@{getIpIn}}
+\index{getIpIn@{getIpIn}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{getIpIn()}{getIpIn()}}
+{\footnotesize\ttfamily \label{class_request_a25705cdbdf85c7ffdfff0e41795bfbfc} 
+std\+::string Request\+::get\+Ip\+In (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the input IP address. 
+
+\begin{DoxyReturn}{Returns}
+The input IP address as a string. 
+\end{DoxyReturn}
+\Hypertarget{class_request_aa55c898286b6895e7d7245c9de97b211}\index{Request@{Request}!getIpOut@{getIpOut}}
+\index{getIpOut@{getIpOut}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{getIpOut()}{getIpOut()}}
+{\footnotesize\ttfamily \label{class_request_aa55c898286b6895e7d7245c9de97b211} 
+std\+::string Request\+::get\+Ip\+Out (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the output IP address. 
+
+\begin{DoxyReturn}{Returns}
+The output IP address as a string. 
+\end{DoxyReturn}
+\Hypertarget{class_request_ae2e2641e6eb49b4dd1b29726c098789d}\index{Request@{Request}!getTime@{getTime}}
+\index{getTime@{getTime}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{getTime()}{getTime()}}
+{\footnotesize\ttfamily \label{class_request_ae2e2641e6eb49b4dd1b29726c098789d} 
+int Request\+::get\+Time (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the timestamp of the request. 
+
+\begin{DoxyReturn}{Returns}
+The timestamp of the request as an integer. 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

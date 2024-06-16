@@ -7,16 +7,20 @@
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Request.h"{}}}
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <queue>}}
 \DoxyCodeLine{00006\ }
-\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_request_queue}{RequestQueue}}\ \{}
-\DoxyCodeLine{00008\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordtype}{void}\ addRequest(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_request}{Request}}\&\ request);}
-\DoxyCodeLine{00010\ \ \ \ \ \mbox{\hyperlink{class_request}{Request}}\ getNextRequest();}
-\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{bool}\ isEmpty()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00012\ }
-\DoxyCodeLine{00013\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00014\ \ \ \ \ std::queue<Request>\ queue;}
-\DoxyCodeLine{00015\ \};}
-\DoxyCodeLine{00016\ }
-\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_request_queue}{RequestQueue}}\ \{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_request_queue_a21e0a1d77be4020d82b062e328b4d6dd}{addRequest}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_request}{Request}}\&\ request);}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_request}{Request}}\ \mbox{\hyperlink{class_request_queue_aabcf6ed3aba61682bdfcc5c48d2face5}{getNextRequest}}();}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_request_queue_a64c8b54cc30da887d61663e44dece1d5}{isEmpty}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_request_queue_a740fb2303eb31d5339d0f9cab7ce011e}{size}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00040\ \ \ \ \ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00042\ \ \ \ \ std::queue<Request>\ queue;\ \ }
+\DoxyCodeLine{00043\ \};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

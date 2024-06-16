@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.11.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Webserver Load Balancer: LoadBalancer Class Reference</title>
+<title>Load Balancer Demonstration: LoadBalancer Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,8 +25,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Webserver Load Balancer
+   <div id="projectname">Load Balancer Demonstration
    </div>
+   <div id="projectbrief">A simulated load balancer that scales up and down depending on the usage.</div>
   </td>
  </tr>
  </tbody>
@@ -90,16 +91,134 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">LoadBalancer Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>A class to manage the distribution of network requests across multiple web servers.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_load_balancer_8h_source.html">LoadBalancer.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a9910ebf665d14ec76a561c5ab8e51bae" id="r_a9910ebf665d14ec76a561c5ab8e51bae"><td class="memItemLeft" align="right" valign="top"><a id="a9910ebf665d14ec76a561c5ab8e51bae" name="a9910ebf665d14ec76a561c5ab8e51bae"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>LoadBalancer</b> (std::vector&lt; <a class="el" href="class_web_server.html">WebServer</a> &gt; &amp;servers)</td></tr>
+<tr class="memitem:a9910ebf665d14ec76a561c5ab8e51bae" id="r_a9910ebf665d14ec76a561c5ab8e51bae"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9910ebf665d14ec76a561c5ab8e51bae">LoadBalancer</a> (std::vector&lt; <a class="el" href="class_web_server.html">WebServer</a> &gt; &amp;servers)</td></tr>
+<tr class="memdesc:a9910ebf665d14ec76a561c5ab8e51bae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="class_load_balancer.html" title="A class to manage the distribution of network requests across multiple web servers.">LoadBalancer</a> object.  <br /></td></tr>
 <tr class="separator:a9910ebf665d14ec76a561c5ab8e51bae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a29d8f4060053068e7a0be40c367f3a27" id="r_a29d8f4060053068e7a0be40c367f3a27"><td class="memItemLeft" align="right" valign="top"><a id="a29d8f4060053068e7a0be40c367f3a27" name="a29d8f4060053068e7a0be40c367f3a27"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>balanceLoad</b> (<a class="el" href="class_request.html">Request</a> &amp;request)</td></tr>
-<tr class="separator:a29d8f4060053068e7a0be40c367f3a27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abba1a1fcaa67e79e9aee94e903e1458c" id="r_abba1a1fcaa67e79e9aee94e903e1458c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abba1a1fcaa67e79e9aee94e903e1458c">addRequest</a> (const <a class="el" href="class_request.html">Request</a> &amp;request)</td></tr>
+<tr class="memdesc:abba1a1fcaa67e79e9aee94e903e1458c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a request to the load balancer's queue.  <br /></td></tr>
+<tr class="separator:abba1a1fcaa67e79e9aee94e903e1458c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b83bc6336a6491a7cb011d92643828d" id="r_a7b83bc6336a6491a7cb011d92643828d"><td class="memItemLeft" align="right" valign="top"><a id="a7b83bc6336a6491a7cb011d92643828d" name="a7b83bc6336a6491a7cb011d92643828d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>balanceLoad</b> ()</td></tr>
+<tr class="memdesc:a7b83bc6336a6491a7cb011d92643828d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Distributes the requests in the queue to the available servers. <br /></td></tr>
+<tr class="separator:a7b83bc6336a6491a7cb011d92643828d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae60e5300263487e42b91d923c4134cfe" id="r_ae60e5300263487e42b91d923c4134cfe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae60e5300263487e42b91d923c4134cfe">addServer</a> (const <a class="el" href="class_web_server.html">WebServer</a> &amp;server)</td></tr>
+<tr class="memdesc:ae60e5300263487e42b91d923c4134cfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a server to the load balancer.  <br /></td></tr>
+<tr class="separator:ae60e5300263487e42b91d923c4134cfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f77281d168914e6bbe1857a0cd84d25" id="r_a2f77281d168914e6bbe1857a0cd84d25"><td class="memItemLeft" align="right" valign="top"><a id="a2f77281d168914e6bbe1857a0cd84d25" name="a2f77281d168914e6bbe1857a0cd84d25"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>removeServer</b> ()</td></tr>
+<tr class="memdesc:a2f77281d168914e6bbe1857a0cd84d25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the last server from the load balancer. <br /></td></tr>
+<tr class="separator:a2f77281d168914e6bbe1857a0cd84d25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62df7b94c22e8e16b22d2cd758b7824e" id="r_a62df7b94c22e8e16b22d2cd758b7824e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a62df7b94c22e8e16b22d2cd758b7824e">getRequestQueueSize</a> () const</td></tr>
+<tr class="memdesc:a62df7b94c22e8e16b22d2cd758b7824e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of requests in the queue.  <br /></td></tr>
+<tr class="separator:a62df7b94c22e8e16b22d2cd758b7824e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A class to manage the distribution of network requests across multiple web servers. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a9910ebf665d14ec76a561c5ab8e51bae" name="a9910ebf665d14ec76a561c5ab8e51bae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9910ebf665d14ec76a561c5ab8e51bae">&#9670;&#160;</a></span>LoadBalancer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">LoadBalancer::LoadBalancer </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="class_web_server.html">WebServer</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>servers</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs a <a class="el" href="class_load_balancer.html" title="A class to manage the distribution of network requests across multiple web servers.">LoadBalancer</a> object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">servers</td><td>A reference to a vector of <a class="el" href="class_web_server.html" title="A class to represent a web server that handles network requests.">WebServer</a> objects. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="abba1a1fcaa67e79e9aee94e903e1458c" name="abba1a1fcaa67e79e9aee94e903e1458c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abba1a1fcaa67e79e9aee94e903e1458c">&#9670;&#160;</a></span>addRequest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LoadBalancer::addRequest </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_request.html">Request</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>request</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adds a request to the load balancer's queue. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">request</td><td>The request to be added. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae60e5300263487e42b91d923c4134cfe" name="ae60e5300263487e42b91d923c4134cfe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae60e5300263487e42b91d923c4134cfe">&#9670;&#160;</a></span>addServer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LoadBalancer::addServer </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_web_server.html">WebServer</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>server</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adds a server to the load balancer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">server</td><td>The <a class="el" href="class_web_server.html" title="A class to represent a web server that handles network requests.">WebServer</a> object to be added. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a62df7b94c22e8e16b22d2cd758b7824e" name="a62df7b94c22e8e16b22d2cd758b7824e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62df7b94c22e8e16b22d2cd758b7824e">&#9670;&#160;</a></span>getRequestQueueSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int LoadBalancer::getRequestQueueSize </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the number of requests in the queue. </p>
+<dl class="section return"><dt>Returns</dt><dd>The number of requests in the queue. </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_load_balancer_8h_source.html">LoadBalancer.h</a></li>
 <li><b>LoadBalancer.cpp</b></li>

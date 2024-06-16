@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.11.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Webserver Load Balancer: LoadBalancer.h Source File</title>
+<title>Load Balancer Demonstration: LoadBalancer.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,8 +25,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Webserver Load Balancer
+   <div id="projectname">Load Balancer Demonstration
    </div>
+   <div id="projectbrief">A simulated load balancer that scales up and down depending on the usage.</div>
   </td>
  </tr>
  </tbody>
@@ -95,20 +96,38 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;WebServer.h&quot;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="foldopen" id="foldopen00009" data-start="{" data-end="};">
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="class_load_balancer.html">    9</a></span><span class="keyword">class </span><a class="code hl_class" href="class_load_balancer.html">LoadBalancer</a> {</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <a class="code hl_class" href="class_load_balancer.html">LoadBalancer</a>(std::vector&lt;WebServer&gt;&amp; servers);</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keywordtype">void</span> balanceLoad(<a class="code hl_class" href="class_request.html">Request</a>&amp; request);</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    std::vector&lt;WebServer&gt;&amp; servers;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>};</div>
+<div class="foldopen" id="foldopen00013" data-start="{" data-end="};">
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="class_load_balancer.html">   13</a></span><span class="keyword">class </span><a class="code hl_class" href="class_load_balancer.html">LoadBalancer</a> {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <a class="code hl_function" href="class_load_balancer.html#a9910ebf665d14ec76a561c5ab8e51bae">LoadBalancer</a>(std::vector&lt;WebServer&gt;&amp; servers);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_load_balancer.html#abba1a1fcaa67e79e9aee94e903e1458c">addRequest</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_request.html">Request</a>&amp; request);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_load_balancer.html#a7b83bc6336a6491a7cb011d92643828d">balanceLoad</a>();</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_load_balancer.html#ae60e5300263487e42b91d923c4134cfe">addServer</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_web_server.html">WebServer</a>&amp; server);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_load_balancer.html#a2f77281d168914e6bbe1857a0cd84d25">removeServer</a>();</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_load_balancer.html#a62df7b94c22e8e16b22d2cd758b7824e">getRequestQueueSize</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    std::vector&lt;WebServer&gt;&amp; servers;  </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <a class="code hl_class" href="class_request_queue.html">RequestQueue</a> requestQueue;        </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>};</div>
 </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclass_load_balancer_html"><div class="ttname"><a href="class_load_balancer.html">LoadBalancer</a></div><div class="ttdef"><b>Definition</b> LoadBalancer.h:9</div></div>
-<div class="ttc" id="aclass_request_html"><div class="ttname"><a href="class_request.html">Request</a></div><div class="ttdef"><b>Definition</b> Request.h:6</div></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclass_load_balancer_html"><div class="ttname"><a href="class_load_balancer.html">LoadBalancer</a></div><div class="ttdoc">A class to manage the distribution of network requests across multiple web servers.</div><div class="ttdef"><b>Definition</b> LoadBalancer.h:13</div></div>
+<div class="ttc" id="aclass_load_balancer_html_a2f77281d168914e6bbe1857a0cd84d25"><div class="ttname"><a href="class_load_balancer.html#a2f77281d168914e6bbe1857a0cd84d25">LoadBalancer::removeServer</a></div><div class="ttdeci">void removeServer()</div><div class="ttdoc">Removes the last server from the load balancer.</div><div class="ttdef"><b>Definition</b> LoadBalancer.cpp:31</div></div>
+<div class="ttc" id="aclass_load_balancer_html_a62df7b94c22e8e16b22d2cd758b7824e"><div class="ttname"><a href="class_load_balancer.html#a62df7b94c22e8e16b22d2cd758b7824e">LoadBalancer::getRequestQueueSize</a></div><div class="ttdeci">int getRequestQueueSize() const</div><div class="ttdoc">Gets the number of requests in the queue.</div><div class="ttdef"><b>Definition</b> LoadBalancer.cpp:27</div></div>
+<div class="ttc" id="aclass_load_balancer_html_a7b83bc6336a6491a7cb011d92643828d"><div class="ttname"><a href="class_load_balancer.html#a7b83bc6336a6491a7cb011d92643828d">LoadBalancer::balanceLoad</a></div><div class="ttdeci">void balanceLoad()</div><div class="ttdoc">Distributes the requests in the queue to the available servers.</div><div class="ttdef"><b>Definition</b> LoadBalancer.cpp:9</div></div>
+<div class="ttc" id="aclass_load_balancer_html_a9910ebf665d14ec76a561c5ab8e51bae"><div class="ttname"><a href="class_load_balancer.html#a9910ebf665d14ec76a561c5ab8e51bae">LoadBalancer::LoadBalancer</a></div><div class="ttdeci">LoadBalancer(std::vector&lt; WebServer &gt; &amp;servers)</div><div class="ttdoc">Constructs a LoadBalancer object.</div><div class="ttdef"><b>Definition</b> LoadBalancer.cpp:3</div></div>
+<div class="ttc" id="aclass_load_balancer_html_abba1a1fcaa67e79e9aee94e903e1458c"><div class="ttname"><a href="class_load_balancer.html#abba1a1fcaa67e79e9aee94e903e1458c">LoadBalancer::addRequest</a></div><div class="ttdeci">void addRequest(const Request &amp;request)</div><div class="ttdoc">Adds a request to the load balancer's queue.</div><div class="ttdef"><b>Definition</b> LoadBalancer.cpp:5</div></div>
+<div class="ttc" id="aclass_load_balancer_html_ae60e5300263487e42b91d923c4134cfe"><div class="ttname"><a href="class_load_balancer.html#ae60e5300263487e42b91d923c4134cfe">LoadBalancer::addServer</a></div><div class="ttdeci">void addServer(const WebServer &amp;server)</div><div class="ttdoc">Adds a server to the load balancer.</div><div class="ttdef"><b>Definition</b> LoadBalancer.cpp:23</div></div>
+<div class="ttc" id="aclass_request_html"><div class="ttname"><a href="class_request.html">Request</a></div><div class="ttdoc">A class to represent a network request with input and output IP addresses and a timestamp.</div><div class="ttdef"><b>Definition</b> Request.h:10</div></div>
+<div class="ttc" id="aclass_request_queue_html"><div class="ttname"><a href="class_request_queue.html">RequestQueue</a></div><div class="ttdoc">A class to represent a queue of network requests.</div><div class="ttdef"><b>Definition</b> RequestQueue.h:11</div></div>
+<div class="ttc" id="aclass_web_server_html"><div class="ttname"><a href="class_web_server.html">WebServer</a></div><div class="ttdoc">A class to represent a web server that handles network requests.</div><div class="ttdef"><b>Definition</b> WebServer.h:11</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
